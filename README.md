@@ -49,16 +49,10 @@ A lightweight Django-based social journaling application that allows users to re
 
 3.  **Run Migrations:**
     ```bash
-    python manage.py makemigrations
     python manage.py migrate
     ```
 
-4.  **Group Setup (Important):**
-    To use the moderation features, create the following groups in the Django Admin panel (`/admin`):
-    * `default`: Basic posting permissions.
-    * `mod`: Moderation and deletion permissions.
-
-5.  **Start the server:**
+4.  **Start the server:**
     ```bash
     python manage.py runserver
     ```
