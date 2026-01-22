@@ -1,8 +1,34 @@
-{% extends 'main/base.html' %} {% block title %}Create a Post{% endblock %}
-{% load crispy_forms_tags %} {% block content %}
-<form method="post">
-    {% csrf_token %}{{form|crispy}}
+{% extends 'main/base.html' %}
+{% block title %}Create a Post{% endblock %}
+{% load crispy_forms_tags %}
 
-    <button type="submit" class="btn btn-success">Post</button>
-</form>
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm" style="background-color: #F2EFE9; border: 1px solid rgba(70, 130, 180, 0.2); border-radius: 8px;">
+                <div class="card-header text-center" style="background: none; border-bottom: none; padding-top: 20px;">
+                    <h4 style="color: #333; margin: 0;">Create a Post</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+
+                        <div class="d-grid mt-3">
+                            <button type="submit" class="btn btn-lg" style="background-color: #177794; border: none; color: white; border-radius: 6px;">
+                                <i class="bi bi-pencil-square"></i> Post
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center" style="background: none; border-top: none;">
+                    <p class="mb-0" style="color: #666;">Your post will appear in your feed immediately after creation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

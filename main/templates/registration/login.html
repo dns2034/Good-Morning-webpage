@@ -1,8 +1,28 @@
-{% extends 'main/base.html' %} {% block title %}Login{% endblock %}
-{% load crispy_forms_tags %} {% block content %}
-<form method="post">
-    {% csrf_token %}{{form|crispy}}
-    <p>Don't have an account? Create one <a href="/sign-up">Here</a>!</p>
-    <button type="submit" class="btn btn-success">Login</button>
-</form>
+{% extends 'main/base.html' %}
+{% block title %}Login{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm" style="background-color: rgba(70, 130, 180, 0.1); border: 1px solid rgba(70, 130, 180, 0.2); border-radius: 8px;">
+                <div class="card-header text-center" style="background: none; border-bottom: none; padding-top: 20px;">
+                    <h4 style="color: #333; margin: 0;">Login</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="d-grid mt-3">
+                            <button type="submit" class="btn btn-lg" style="background-color: #4CAF50; border: none; color: white; border-radius: 6px;">Login</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center" style="background: none; border-top: none;">
+                    <p class="mb-0" style="color: #666;">Don't have an account? Create one <a href="/sign-up" class="text-decoration-none" style="color: #4CAF50;">Here</a>!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

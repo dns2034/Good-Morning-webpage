@@ -9,7 +9,7 @@ from .models import Post
 # Create your views here.
 @login_required(login_url='/login')
 def home(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_at')
 
     if request.method == "POST":
         post_id = request.POST.get("post-id")
